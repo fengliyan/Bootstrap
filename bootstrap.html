@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<title>浏览器博物馆</title>
+	<style type="text/css">
+		body{
+			padding-top: 50px;
+      padding-bottom: 30px;
+		}
+    /*对轮播的一些设置，设置图片的高度 宽度*/
+    .carousel{
+      height:300px;
+      background-color:#000;
+      margin-bottom: 30px;
+    }
+    .carousel .item{
+      height:300px;
+      background-color:#000;
+    }
+    .carousel img{
+      width:100%;
+    }
+    .carousel-caption p{
+      color:black;
+    }
+
+    hr.divider{
+      margin:40px 0;
+    }
+     /*标签下字体的设置*/
+     .feature{
+      padding:30px 0;
+     }
+	</style>
+</head>
+<body>
+<!--.navbar-fixed-top导航条固定在顶部。加上此类后相当于导航条绝对定位，会遮住内容，导航条默认高度50px，所以设置body的padding-top:70px，让内容不被遮住。若去掉此类，滚动时导航条会消失;.navbar-inverse改变外观，导航条是黑色-->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+  <!--class="container-fluid内容没有在中间，container内容在中间-->
+  	<div class="container">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example">
+  				<span class="sr-only">Toggle navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+  	       <a href="#" class="navbar-brand">浏览器博物馆</a>
+  		</div>
+
+  		<div class="collapse navbar-collapse" id="example">
+  			<ul class="nav navbar-nav">
+  				<li  class="active"><a href="#">综述</a></li>
+  				<li><a href="#">简述</a></li>
+  				<!--下拉菜单，利用data属性可以实现，不用写js，简单，首选-->
+  				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">特点<span class="caret"></span></a>
+                   <ul class="dropdown-menu" role="menu">
+                    <!--href的设置和tab中href一样-->
+                   	 <li><a href="#chrome">Chrome</a></li>
+                     <li><a href="#ie">IE</a></li>
+                   	 <li><a href="#firefox">Firefox</a></li>
+                   	 <!--<li><a href="#">Opera</a></li>
+                   	 分隔符
+                   	 <li class="divider"></li>
+                   	 <li><a href="#">Safari</a></li>-->
+                   	
+                   </ul>
+  				</li>
+          <!--通过data-toggle="modal" data-target="#about"将modal关联起来-->
+  				<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+  			</ul>
+  		</div>
+  	</div>
+  </nav>
+
+  <!--轮播-->
+  <div data-ride="carousel" class="carousel slide" id="carousel-example-generic">
+   <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+   </ol>
+
+   <div class="carousel-inner" role="listbox">
+     <div class="item active">
+     <img src="img/1.jpg" alt="">
+     <div class="carousel-caption">
+      <p>aaaa</p>
+     </div>
+     </div>
+     <div class="item">
+      <img src="img/2.jpg" alt="">
+      <div class="carousel-caption">
+         <p>aaaa</p>
+      </div>
+     </div>
+     <div class="item">
+     <img src="img/3.jpg" alt="">
+     <div class="carousel-caption">
+        <p>aaaa</p>
+     </div>
+     </div>
+     <div class="item">
+     <img src="img/4.jpg" alt="">
+     <div class="carousel-caption">
+        <p>aaaa</p>
+     </div>
+     </div>
+   </div>
+
+     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+     <span class="glyphicon glyphicon-chevron-left"></span>
+     <span class="sr-only">前一页</span>
+     </a>
+     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+     <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">后一页</span>
+     </a>
+ 
+  </div>
+
+  <!--栅格系统；row必须放在.container或.container-fluid中；在PC中，.col-md-水平排列，当屏幕缩小，会各自占一行-->
+  <div class="container" id="summary">
+   <div class="row">
+     <div class="col-md-4">
+       <h2>Chrome</h2>
+       <p>aaaaaaaaaaaaaa</p>
+       <p><a href="#" class="btn btn-default" role="button">点我下载</a></p>
+     </div>
+     <div class="col-md-4">
+     <h2>IE</h2>
+     <p>bbbbbbbbb</p>
+     <p><a href="#" class="btn btn-default" role="button">点我下载</a></p>
+     </div>
+     <div class="col-md-4">
+     <h2>IE</h2>
+     <p>bbbbbbbbb</p>
+     <p><a href="#" class="btn btn-default" role="button">点我下载</a></p>
+     </div>
+   </div>
+   <!--横线，放在.container中，不是占满整个宽度-->
+   <hr class="divider">
+
+   
+   <!--标签-->
+   <ul class="nav nav-tabs" role="tablist" id="tablist">
+    <li class="active"><a href="#chrome" data-toggle="tab" role="tab">Chrome</a></li>
+    <li><a href="#ie" data-toggle="tab" role="tab">IE</a></li>
+    <li><a href="#firefox" data-toggle="tab" role="tab">Firefox</a></li>
+   </ul>
+
+   <div class="tab-content feature">
+    <div class="tab-pane active" id="chrome">
+      <div class="row">
+       <div class="col-md-7">
+         <h2>Chrome</h2>
+         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+       </div>
+       <div class="col-md-5">
+         <img src="img/1.jpg" style="width:100px;height:100px">
+       </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="ie">
+      <div class="row">
+       <div class="col-md-7">
+         <h2>IE</h2>
+         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+       </div>
+       <div class="col-md-5">
+         <img src="img/2.jpg" style="width:100px;height:100px">
+       </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="firefox">
+      <div class="row">
+       <div class="col-md-7">
+         <h2>Firefox</h2>
+         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+       </div>
+       <div class="col-md-5">
+         <img src="img/3.jpg" style="width:100px;height:100px">
+       </div>
+      </div>
+    </div>
+   </div>
+
+   <hr class="divider">
+    <!--底部标签-->
+   <footer>
+    <!--自带的类.pull-right，靠右-->
+   <p class="pull-right">浏览器</p>
+   <p>2017</p>
+   </footer>
+  </div>
+
+
+<!--弹出框，一般都放在最后-->
+<div class="modal fade" id="about">
+ <div class="modal-dialog">
+   <div class="modal-content">
+    <!--弹出框头部-->
+      <div class="modal-header">
+        <!--右边的关闭按钮-->
+        <button type="button" class="close" data-dismiss="modal">
+          <!--aria-hidden图标的可访问性-->
+          <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+         <!--左边的头部-->
+        <h4>关于</h4>
+      </div>
+      <!--弹出框内容-->
+      <div class="modal-body">
+       该网站的简介
+      </div>
+      <!--弹出框底部-->
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">知道了</button>
+      </div>
+   </div>
+ </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+   //将下拉框中的信息与tab中的信息联系起来
+   $("#example .dropdown-menu a").click(function(){
+      var href=$(this).attr("href");
+      $("#tablist a[href="+href+"]").tab("show");
+   });
+ });
+</script>
+</body>
+</html>
